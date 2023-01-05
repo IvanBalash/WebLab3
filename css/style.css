@@ -5,6 +5,7 @@
 #buttons {
     display: flex;
     width: 25%;
+    height: 250px;
     flex-wrap: wrap;
 }
 
@@ -46,6 +47,10 @@ table, th, tr{
     padding: 5px;
     border: 1px solid;
     border-collapse: collapse;
+}
+
+thead, thead tr th{
+    border: 2px solid;
 }
 
 #table{

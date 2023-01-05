@@ -2,15 +2,14 @@
 let table_exist = false;
 let n;
 let k = 1;
-let size = 0;
 let b = 0;
-let arr = [];
 
 create_table.onclick = function () {
     if (table_exist) {
         alert('There is a table already');
     }
     else {
+        remove.disabled = false;
         let table = document.createElement('table');
         let thead = document.createElement('thead');
         let tbody = document.createElement('tbody');
@@ -58,7 +57,7 @@ submit.onclick = function() {
 
 add.onclick = function () {
     let row = document.createElement('tr');
-    remove.disabled = false;
+    
     for (let i = 0; i < n; i++) {
         let element = document.createElement('th');
         let form = document.createElement('input');
@@ -71,17 +70,25 @@ add.onclick = function () {
         element.appendChild(form);
         row.appendChild(element);
     }
-    size++;
-    arr.push('row_' + size);
-    row.id = arr[size-1];
     b++;
     submit.style.display = 'block';
     tbody.appendChild(row);
 }
 
+
 remove.onclick = function () {
     k = remove_num.value;
-    alert(size);
-    document.getElementById(arr[k - 1]).remove();
-    arr.splice(k-1,1);
+    let arr = tbody.querySelectorAll('tr');
+    if (k == 0 || k == null) {
+        table.remove();
+        table_exist = false;
+        b = 0;
+        submit.style.display = 'none';
+
+    }
+    else if (k > arr.length) {
+        alert("There is no the row");
+    }
+    else {arr[k-1].remove(); }
+    
 }
