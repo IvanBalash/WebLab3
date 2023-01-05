@@ -1,0 +1,53 @@
+﻿body {
+    display: flex;
+}
+
+#buttons {
+    display: flex;
+    width: 25%;
+    flex-wrap: wrap;
+}
+
+#buttons div{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+#buttons div button {
+    margin: 20px 0;
+    width: 50%;
+}
+
+#buttons div #add {
+    width: 100%;
+}
+
+#buttons div #submit {
+    width: 100%;
+    display:none;
+}
+
+
+#buttons div input {
+    width: 35%;
+    height:15px;
+}
+
+#table-section{
+    width:75%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+table, th, tr{
+    padding: 5px;
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+#table{
+    width:90%;
+}
